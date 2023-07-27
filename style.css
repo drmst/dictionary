@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: black;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#search-form {
+    display: flex;
+    margin: 10px 0;
+}
+
+#search {
+    margin-top: 100px;
+    width: 500px;
+
+
+}
+
+#search-bar {
+    width: 100%;
+
+}
+
+.search-text {
+    font-size: 20px;
+    background-color: white;
+    border: solid 2px aquamarine;
+    border-radius: 15px;
+
+}
+
+#btn {
+    background-color: aquamarine;
+    border-radius: 15px;
+    background-color: aquamarine;
+}
+
+#dictionary {
+    background-color: aquamarine;
+    width: 500px;
+    height: 400px;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#word p {
+    font-size: 40px;
+    font-weight: 400;
+}
+
+#definition p {
+    font-size: 16px;
+    font-style: italic;
+    color: rgb(103, 113, 114)
+}
