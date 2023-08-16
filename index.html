@@ -10,25 +10,27 @@
 </head>
 
 <body>
+    <div class="header">
+        <p class="website-name">Simple Dictionary</p>
+    </div>
     <div id="container">
         <div id="search">
             <form id="search-form">
-                
-                <input type="search" placeholder="Search for a word, eg: hello" id="word-input" class="search-text">
-                <button id="btn" class="search-text">Search</button>
+                <input type="search" placeholder="Search for a word, eg: hello" id="word-input" class="search-text search-text-dimensions">
+                <button id="btn" class="search-text btn-dimensions">Search</button>
             </form>
         </div>
         <div id="dictionary">
             <div id="word">
-                <p id="word-text">hello</p>
+                <p id="word-text" >hello</p>
             </div>
             <div id="definition">
-                <p>type:</p>
-                <p id="part-of-speech">noun</p>
-                <p>definition</p>
-                <p id="definition-text">"Hello!" or an equivalent greeting.</p>
-                <p>synonym</p>
-                <p id="synonyms">greeting</p>
+                <p class="sub-definition">type:</p>
+                <p id="part-of-speech" class="sub-text">noun</p>
+                <p class="sub-definition">definition:</p>
+                <p id="definition-text" class="sub-text">"Hello!" or an equivalent greeting.</p>
+                <p class="sub-definition">synonym:</p>
+                <p id="synonyms" class="sub-text">greeting</p>
             </div>
             <script src="app.js"></script>
 </body>

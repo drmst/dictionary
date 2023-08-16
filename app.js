@@ -5,6 +5,7 @@ const wordText = document.getElementById("word-text");
 const btn = document.getElementById("btn");
 const partOfSpeech=document.getElementById("part-of-speech");
 const synonyms=document.getElementById("synonyms");
+const definition= document.getElementById("definition")
 
 btn.addEventListener("click", (e) => {
     e.preventDefault()
@@ -14,12 +15,10 @@ btn.addEventListener("click", (e) => {
     .then((data) => {wordText.innerText=data[0].word;
     definitionText.innerText=data[0].meanings[0].definitions[0].definition;
     partOfSpeech.innerText=data[0].meanings[0].partOfSpeech;
-    synonyms.innerText=data[0].meanings[0].synonyms[0]
+    synonyms.innerText=data[0].meanings[0].synonyms[0];
 })
    .catch((error)=>{wordText.innerText="there is no such word 😔";
-    definitionText.innerText="";
-    partOfSpeech.innerText="";
-    synonyms.innerText="";
+    definition.innerText="";
 
    });
 });

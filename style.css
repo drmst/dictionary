@@ -2,9 +2,25 @@
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-body{
-    background-color: black;
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.website-name {
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+    text-shadow: 3px 3px 1px rgb(229, 235, 178);
+    margin: 10px;
+}
+
+body {
+    background-color: rgb(190, 73, 73);
+}
+
 
 #container {
     display: flex;
@@ -16,50 +32,65 @@ body{
 #search-form {
     display: flex;
     margin: 10px 0;
+    justify-content: center;
 }
 
 #search {
-    margin-top: 100px;
+    margin-top: 10px;
     width: 500px;
-
-
 }
 
 #search-bar {
     width: 100%;
-
 }
 
 .search-text {
     font-size: 20px;
     background-color: white;
-    border: solid 2px aquamarine;
+    border: solid 2px rgb(229, 235, 178);
     border-radius: 15px;
+}
 
+.search-text-dimensions {
+    width: 400px;
+    margin-right: 5px;
+}
+
+.btn-dimensions {
+    width: 100px;
 }
 
 #btn {
-    background-color: aquamarine;
+
     border-radius: 15px;
-    background-color: aquamarine;
+    background-color: rgb(229, 235, 178);
 }
 
 #dictionary {
-    background-color: aquamarine;
+    background-color: rgb(229, 235, 178);
     width: 500px;
-    height: 400px;
+  
     margin: 20px auto;
     padding: 10px;
     border-radius: 10px;
 }
 
-#word p {
+#word-text{
+    padding-left: 15px;
     font-size: 40px;
     font-weight: 400;
+    border-bottom: 2px dotted gray;
 }
 
-#definition p {
-    font-size: 16px;
+.sub-definition{
+    font-size: 18px;
     font-style: italic;
-    color: rgb(103, 113, 114)
+    color: rgb(103, 113, 114);
+    
+}
+
+.sub-text{
+    font-size: 24px;
+    padding-left: 15px;
+  
 }
