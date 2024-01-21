@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simple Dictionary</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,24 +15,16 @@
     </div>
     <div id="container">
         <div id="search">
-            <form id="search-form">
-                <input type="search" placeholder="Search for a word, eg: hello" id="word-input" class="search-text search-text-dimensions">
-                <button id="btn" class="search-text btn-dimensions">Search</button>
-            </form>
+            <div id="search-form">
+                <input type="search" placeholder="Search for a word, eg: hello" id="word-input"
+                    class="search-text search-text-dimensions">
+                <button id="search-button" class="search-text btn-dimensions">Search</button>
+            </div>
         </div>
         <div id="dictionary">
-            <div id="word">
-                <p id="word-text" >hello</p>
-            </div>
-            <div id="definition">
-                <p class="sub-definition">type:</p>
-                <p id="part-of-speech" class="sub-text">noun</p>
-                <p class="sub-definition">definition:</p>
-                <p id="definition-text" class="sub-text">"Hello!" or an equivalent greeting.</p>
-                <p class="sub-definition">synonym:</p>
-                <p id="synonyms" class="sub-text">greeting</p>
-            </div>
-            <script src="app.js"></script>
+        </div>
+    </div>
+    <script src="app.js"></script>
 </body>
 
 </html>

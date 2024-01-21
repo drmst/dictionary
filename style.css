@@ -3,6 +3,11 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    background-color: rgb(190, 73, 73);
+}
+
+
 .header {
     display: flex;
     justify-content: center;
@@ -13,12 +18,8 @@
     font-size: 60px;
     font-weight: 600;
     color: white;
-    text-shadow: 3px 3px 1px rgb(229, 235, 178);
-    margin: 10px;
-}
-
-body {
-    background-color: rgb(190, 73, 73);
+    text-shadow: 3px 3px 1px rgb(48, 48, 45);
+    margin: 20px;
 }
 
 
@@ -60,13 +61,13 @@ body {
     width: 100px;
 }
 
-#btn {
+#search-button {
 
     border-radius: 15px;
     background-color: rgb(229, 235, 178);
 }
 
-#dictionary {
+.dictionary {
     background-color: rgb(229, 235, 178);
     width: 500px;
   
@@ -93,4 +94,8 @@ body {
     font-size: 24px;
     padding-left: 15px;
   
+}
+.word-card{
+    border: 2px black dotted;
+    margin:5px;
 }
