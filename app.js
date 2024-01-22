@@ -47,24 +47,33 @@ searchButton.addEventListener("click", (e) => {
             partOfSpeech.innerText = meaning.partOfSpeech;
             meanings.appendChild(partOfSpeech);
 
+            const synonymContainer = document.createElement("div");
+            synonymContainer.classList.add("synonym-container");
+            meanings.appendChild(synonymContainer);
+
+            meaning.synonyms.map((synonym) => {
+              const synonymWord = document.createElement("p");
+              // synonymWord.href=`${URL}${synonym}`;
+              synonymWord.innerText=synonym+"*";
+              synonymContainer.appendChild(synonymWord);
+
+            });
+
             const definition = document.createElement("div");
             definition.classList.add("definition");
             meanings.appendChild(definition);
             meaning.definitions.map((def) => {
+              const definitionCard = document.createElement("div");
+              definitionCard.classList.add("definition-card");
+              definition.appendChild(definitionCard);
               const definitionExplanation = document.createElement("p");
               definitionExplanation.classList.add("definition-explanation");
               definitionExplanation.innerText = def.definition;
-              definition.appendChild(definitionExplanation);
-              //synonym
-              // const synonyms = document.createElement("div");
-              // synonyms.classList.add("synonyms");
-              // synonyms.appendChild(definitionExplanation);
-              // if (def.synonyms.length>0) {
-              //   //
-              //   console.log(def.synonyms);
-              // }
-
-              // })
+              definitionCard.appendChild(definitionExplanation);
+              const definitionExample = document.createElement("p");
+              definitionExample.classList.add("definition-example");
+              definitionExample.innerText = def.example;
+              definitionCard.appendChild(definitionExample);
             });
           });
         });

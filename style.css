@@ -70,32 +70,37 @@ body {
 .dictionary {
     background-color: rgb(229, 235, 178);
     width: 500px;
-  
+
     margin: 20px auto;
     padding: 10px;
     border-radius: 10px;
 }
 
-#word-text{
+#word-text {
     padding-left: 15px;
     font-size: 40px;
     font-weight: 400;
     border-bottom: 2px dotted gray;
 }
 
-.sub-definition{
+.sub-definition {
     font-size: 18px;
     font-style: italic;
     color: rgb(103, 113, 114);
-    
+
 }
 
-.sub-text{
+.sub-text {
     font-size: 24px;
     padding-left: 15px;
-  
+
 }
-.word-card{
-    border: 2px black dotted;
-    margin:5px;
+
+.word-card {
+    border: 2px dotted black;
+    margin: 5px;
+}
+
+.definition-card {
+    border: 2px solid gray;
 }
