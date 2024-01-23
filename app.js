@@ -2,11 +2,11 @@ const URL = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 //sözlük kapsayıcısı
 const dictionaryContainer = document.getElementById("dictionary");
 // search düğmesi
-const searchButton = document.getElementById("search-button");
+const searchForm = document.getElementById("search-form");
 
-searchButton.addEventListener("click", (e) => {
+searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  const inputWord = document.getElementById("word-input").value;
+  const inputWord = document.getElementById("word-input").value.toLowerCase();
   dictionaryContainer.innerText = "";
   fetch(`${URL}${inputWord}`).then((res) =>
     res
@@ -32,10 +32,13 @@ searchButton.addEventListener("click", (e) => {
           definitionContainer.classList.add("definition-container");
           wordCard.appendChild(definitionContainer);
           // create phonetic p
-          const phonetic = document.createElement("p");
-          phonetic.classList.add("phonetic");
-          phonetic.innerText = words.phonetic;
-          definitionContainer.appendChild(phonetic);
+          if (words.hasOwnProperty("phonetic")) {
+            const phonetic = document.createElement("p");
+            phonetic.classList.add("phonetic");
+            phonetic.innerText = words.phonetic;
+            definitionContainer.appendChild(phonetic);
+          }
+
           //create meanings
           const meanings = document.createElement("div");
           meanings.classList.add("meanings");
@@ -53,10 +56,8 @@ searchButton.addEventListener("click", (e) => {
 
             meaning.synonyms.map((synonym) => {
               const synonymWord = document.createElement("p");
-              // synonymWord.href=`${URL}${synonym}`;
-              synonymWord.innerText=synonym+"*";
+              synonymWord.innerText = synonym + "*";
               synonymContainer.appendChild(synonymWord);
-
             });
 
             const definition = document.createElement("div");
@@ -66,20 +67,28 @@ searchButton.addEventListener("click", (e) => {
               const definitionCard = document.createElement("div");
               definitionCard.classList.add("definition-card");
               definition.appendChild(definitionCard);
+
               const definitionExplanation = document.createElement("p");
               definitionExplanation.classList.add("definition-explanation");
               definitionExplanation.innerText = def.definition;
               definitionCard.appendChild(definitionExplanation);
-              const definitionExample = document.createElement("p");
-              definitionExample.classList.add("definition-example");
-              definitionExample.innerText = def.example;
-              definitionCard.appendChild(definitionExample);
+              if (def.hasOwnProperty("example")) {
+                const definitionExample = document.createElement("p");
+                definitionExample.classList.add("definition-example");
+                definitionExample.innerText = def.example;
+                definitionCard.appendChild(definitionExample);
+              }
             });
           });
         });
       })
       .catch((error) => {
-        console.log("HATA ŞUDUR" + error);
+        console.log(error);
+        dictionaryContainer.innerText = "";
+        const errorMessage = document.createElement("p");
+        errorMessage.classList.add("error-message");
+        errorMessage.innerText = "There is no such word 😔";
+        dictionaryContainer.appendChild(errorMessage);
       })
   );
 });
