@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: rgb(190, 73, 73);
+    background-color: #F5EEE6;
 }
 
 
@@ -17,9 +17,10 @@ body {
 .website-name {
     font-size: 60px;
     font-weight: 600;
-    color: white;
-    text-shadow: 3px 3px 1px rgb(48, 48, 45);
+    color: #E6A4B4;
+    text-shadow: 3px 3px 1px #79565f;
     margin: 20px;
+    text-decoration: none;
 }
 
 
@@ -38,7 +39,7 @@ body {
 
 #search {
     margin-top: 10px;
-    width: 500px;
+
 }
 
 #search-bar {
@@ -48,8 +49,12 @@ body {
 .search-text {
     font-size: 20px;
     background-color: white;
-    border: solid 2px rgb(229, 235, 178);
+    border: solid 2px #E6A4B4;
     border-radius: 15px;
+}
+
+.search-button{
+    cursor: pointer;
 }
 
 .search-text-dimensions {
@@ -64,13 +69,18 @@ body {
 #search-button {
 
     border-radius: 15px;
-    background-color: rgb(229, 235, 178);
+    background-color: #FFF8E3;
 }
 
-.dictionary {
-    background-color: rgb(229, 235, 178);
-    width: 500px;
+#search-button:hover {
+    background-color: #fae8b2;
+    transition:0.15s;
+}
 
+
+.dictionary {
+    background-color: rgb(255, 255, 255);
+    width: 500px;
     margin: 20px auto;
     padding: 10px;
     border-radius: 10px;
@@ -83,11 +93,22 @@ body {
     border-bottom: 2px dotted gray;
 }
 
+.phonetic-audio-con{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .sub-definition {
     font-size: 18px;
     font-style: italic;
     color: rgb(103, 113, 114);
 
+}
+audio{
+    font-size: 5px;
+    height: 20px;
+    width: 200px;
 }
 
 .sub-text {
@@ -97,10 +118,48 @@ body {
 }
 
 .word-card {
-    border: 2px dotted black;
+    border: 2px solid #E6A4B4;
+    border-radius: 5px;
+    margin: 10px 5px;
+    background-color: #FFF8E3;
+    padding: 3px;
+}
+
+
+.word-text {
+    font-size: 50px;
     margin: 5px;
 }
 
-.definition-card {
-    border: 2px solid gray;
+.part-of-speech {
+    font-style: italic;
+    color: rgb(141, 141, 141);
+    border-top:2px solid #E6A4B4;
+}
+
+.definition{
+    background-color: #fcf8f4;
+    border: 1px solid #E6A4B4;
+    border-radius: 5px;
+    padding-left: 2px;
+}
+
+.synonym-word-container{
+display: flex;
+flex-wrap: wrap;
+}
+
+.synonym-word{
+    margin:2px;
+    padding: 2px;
+    background-color: #F3D7CA;
+    border-radius: 2px;
+}
+
+.definition-example{
+ color: rgb(103, 101, 101);  
+}
+
+.error-message{
+    font-size: 30px;
 }

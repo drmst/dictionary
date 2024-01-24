@@ -8,6 +8,7 @@ searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   const inputWord = document.getElementById("word-input").value.toLowerCase();
   dictionaryContainer.innerText = "";
+
   fetch(`${URL}${inputWord}`).then((res) =>
     res
       .json()
@@ -33,10 +34,23 @@ searchForm.addEventListener("submit", (e) => {
           wordCard.appendChild(definitionContainer);
           // create phonetic p
           if (words.hasOwnProperty("phonetic")) {
+            const phoneticAudioContainer = document.createElement("div");
+            phoneticAudioContainer.classList.add("phonetic-audio-con");
+            definitionContainer.appendChild(phoneticAudioContainer);
+
             const phonetic = document.createElement("p");
             phonetic.classList.add("phonetic");
             phonetic.innerText = words.phonetic;
-            definitionContainer.appendChild(phonetic);
+            phoneticAudioContainer.appendChild(phonetic);
+
+            const audio = document.createElement("audio");
+            audio.controls = true;
+            phoneticAudioContainer.appendChild(audio);
+
+            const audioSource = document.createElement("source");
+            audioSource.src = words.phonetics[0].audio;
+            audioSource.type = "audio/ogg";
+            audio.appendChild(audioSource);
           }
 
           //create meanings
@@ -50,15 +64,27 @@ searchForm.addEventListener("submit", (e) => {
             partOfSpeech.innerText = meaning.partOfSpeech;
             meanings.appendChild(partOfSpeech);
 
-            const synonymContainer = document.createElement("div");
-            synonymContainer.classList.add("synonym-container");
-            meanings.appendChild(synonymContainer);
+            if (meaning.synonyms.length > 0) {
+              const synonymContainer = document.createElement("div");
+              synonymContainer.classList.add("synonym-container");
+              meanings.appendChild(synonymContainer);
 
-            meaning.synonyms.map((synonym) => {
-              const synonymWord = document.createElement("p");
-              synonymWord.innerText = synonym + "*";
-              synonymContainer.appendChild(synonymWord);
-            });
+              const synonymText = document.createElement("p");
+              synonymText.classList.add("synonym-text");
+              synonymText.innerText = "Synonyms:";
+              synonymContainer.appendChild(synonymText);
+
+              const synonymWordContainer = document.createElement("div");
+              synonymWordContainer.classList.add("synonym-word-container");
+              synonymContainer.appendChild(synonymWordContainer);
+
+              meaning.synonyms.map((synonym) => {
+                const synonymWord = document.createElement("p");
+                synonymWord.classList.add("synonym-word");
+                synonymWord.innerText = synonym;
+                synonymWordContainer.appendChild(synonymWord);
+              });
+            }
 
             const definition = document.createElement("div");
             definition.classList.add("definition");
@@ -70,7 +96,7 @@ searchForm.addEventListener("submit", (e) => {
 
               const definitionExplanation = document.createElement("p");
               definitionExplanation.classList.add("definition-explanation");
-              definitionExplanation.innerText = def.definition;
+              definitionExplanation.innerText = `- ${def.definition}`;
               definitionCard.appendChild(definitionExplanation);
               if (def.hasOwnProperty("example")) {
                 const definitionExample = document.createElement("p");
@@ -80,6 +106,8 @@ searchForm.addEventListener("submit", (e) => {
               }
             });
           });
+
+          dictionaryContainer.classList.add("dictionary");
         });
       })
       .catch((error) => {

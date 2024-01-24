@@ -2,29 +2,30 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Dictionary</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Dictionary</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <div class="header">
-        <p class="website-name">Simple Dictionary</p>
+  <div class="header">
+    <a class="website-name" href="./index.html">Simple Dictionary</a>
+  </div>
+  <div id="container">
+    <div id="search">
+      <form id="search-form">
+        <input type="text" placeholder="Search for a word, eg: hello" id="word-input"
+          class="search-text search-text-dimensions" />
+        <button id="search-button" class="search-text btn-dimensions search-button">
+          Search
+        </button>
+      </form>
     </div>
-    <div id="container">
-        <div id="search">
-            <form id="search-form">
-                <input type="search" placeholder="Search for a word, eg: hello" id="word-input"
-                    class="search-text search-text-dimensions">
-                <button id="search-button" class="search-text btn-dimensions">Search</button>
-            </form>
-        </div>
-        <div id="dictionary">
-        </div>
-    </div>
-    <script src="app.js"></script>
+    <div id="dictionary"></div>
+  </div>
+  <script src="app.js"></script>
 </body>
 
 </html>
