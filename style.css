@@ -24,6 +24,7 @@ body {
 }
 
 
+
 #container {
     display: flex;
     flex-direction: column;
@@ -53,7 +54,7 @@ body {
     border-radius: 15px;
 }
 
-.search-button{
+.search-button {
     cursor: pointer;
 }
 
@@ -74,7 +75,7 @@ body {
 
 #search-button:hover {
     background-color: #fae8b2;
-    transition:0.15s;
+    transition: 0.15s;
 }
 
 
@@ -93,8 +94,8 @@ body {
     border-bottom: 2px dotted gray;
 }
 
-.phonetic-audio-con{
-    display:flex;
+.phonetic-audio-con {
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
@@ -105,7 +106,8 @@ body {
     color: rgb(103, 113, 114);
 
 }
-audio{
+
+audio {
     font-size: 5px;
     height: 20px;
     width: 200px;
@@ -134,32 +136,38 @@ audio{
 .part-of-speech {
     font-style: italic;
     color: rgb(141, 141, 141);
-    border-top:2px solid #E6A4B4;
+    border-top: 2px solid #E6A4B4;
 }
 
-.definition{
+.definition {
     background-color: #fcf8f4;
     border: 1px solid #E6A4B4;
     border-radius: 5px;
     padding-left: 2px;
 }
 
-.synonym-word-container{
-display: flex;
-flex-wrap: wrap;
+.synonym-word-container {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.synonym-word{
-    margin:2px;
+.synonym-word {
+    margin: 2px;
     padding: 2px;
     background-color: #F3D7CA;
     border-radius: 2px;
+    cursor: pointer;
 }
 
-.definition-example{
- color: rgb(103, 101, 101);  
+.synonym-word:hover {
+    transition: 0.1s;
+    background-color: #f3c3ad;
 }
 
-.error-message{
+.definition-example {
+    color: rgb(103, 101, 101);
+}
+
+.error-message {
     font-size: 30px;
 }
